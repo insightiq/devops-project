@@ -1,0 +1,24 @@
+---
+- hosts: localhost
+  become: false
+
+  tasks:
+      - name: Stop running container
+        command: docker stop 1365890/devops_project
+        ignore_errors: yes
+
+      - name: Remove running container
+        command: docker rm  1365890/devops_project
+        ignore_errors: yes
+
+      - name: create a container with the streamlit image
+        command: docker run -d --name 1365890/devops_project -p 8080:8080 1365890/devops_project
+
+
+      - name: Remove Old Docker image
+        command: docker images -a | grep none | awk '{ print $3; }' | xargs docker rmi -f        
+
+
+     
+      
+
