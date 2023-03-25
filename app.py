@@ -19,25 +19,23 @@ from pywebio.session import run_js
 from pywebio import start_server
 #-----------------------------------------------------------------------------------------------------------------------
 
+
+
+
 #Creating  a flask app
 
 app=Flask(__name__)
-
-
-
-
-
 
 #Main function that creates the QR code
 def QR():
     c=0 #for like count
 
 
-    set_env(title="QR-Code Generator Modified") #For setting the window title bar text(tab text)
+    set_env(title="QR-Code Generator") #For setting the window title bar text(tab text)
 
-    # put_html(r"""<h1  align="center"><strong>Color-QR: QRCode Generator</strong></h1>""") #App Name in Main screen
-    # img = open('logo.png', 'rb').read()  #logo
-    # put_image(img, width='100px')#size of image
+    put_html(r"""<h1  align="center"><strong>Color-QR: QRCode Generator</strong></h1>""") #App Name in Main screen
+    img = open('logo.png', 'rb').read()  #logo
+    put_image(img, width='100px')#size of image
 
 
     x=input("Enter the URL or Text to Create QR-code",type="text",required=True)#Accepting url or data
@@ -81,7 +79,7 @@ def QR():
     #put_text("Your QR Code is Created.")
     put_html(r"""<h3  align="center"><strong>Your QR Code is Created</strong></h3>""")
     img = open('qr-image.jpg', 'rb').read()
-    put_image(img, width='250px')
+    put_image(img, width='150px')
 
     content = open('qr-image.jpg', 'rb').read()
     put_file('qr-image.jpg', content, 'Download QR code')
@@ -91,8 +89,8 @@ def QR():
     def clicked():
         popup('About Us', [
             put_html('<h2>Created by Aswin Ks</h2>'),
-            put_html('<h3>Color-QR is a webapp for creating QR codes. It is free and made entirely using Python. This app allows to generate QR codes and decode the content of existing QR codes!</h3>'),
-            '',  # equal to put_text('plain html: <br/>')
+            put_html('<h3>This Project is created using Python, Pywebio and Flask</h3>'),
+            'Find More @ https://github.com/aswinks1995',  # equal to put_text('plain html: <br/>')
             put_buttons(['close'], onclick=lambda _: close_popup())
         ])
 
@@ -117,53 +115,15 @@ def QR():
             liked()
 
 
-
     put_buttons(['Generate new QR Code', 'About', 'Like'], onclick=btn_click)#Buttons
 
 
-
-def main_method():
-    put_html(r"""<h1  align="center"><strong>Color-QR-Generate and Scan QR codes</strong></h1>""")  # App Name in Main screen
-    img = open('logo.png', 'rb').read()  # logo
-    put_image(img, width='100px')  # size of image
-
-
-
-    confirm = actions('Choose an Option to get started!', ['Generate QR code', 'Scan QR Code'],
-                          help_text='')
-    if confirm=='Generate QR code':
-            QR()
-
-    if confirm=='Scan QR Code':
-        pass
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    #To allow reloading of web browser and mentioning the port
+#To allow reloading of web browser and mentioning the port
 app.add_url_rule('/qr','webio_view',webio_view(QR),methods=['GET','POST','OPTIONS'])
-
-
-
-
-
 
 if __name__ =='__main__':
     parser=argparse.ArgumentParser()
-    parser.add_argument("-p","--port",type=int,default=8081)
+    parser.add_argument("-p","--port",type=int,default=8085)
     args=parser.parse_args()
 
-    start_server(main_method,port=args.port)
-
-
+    start_server(QR,port=args.port)
