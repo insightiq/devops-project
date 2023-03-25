@@ -11,7 +11,7 @@
         command: docker rm  1365890/devops_project
         ignore_errors: yes
 
-      - name: create a container with the streamlit image
+      - name: create a container with the devops-project  image
         command: docker run -d --name 1365890/devops_project -p 8080:8080 1365890/devops_project
 
 
