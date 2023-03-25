@@ -12,11 +12,11 @@
         ignore_errors: yes
 
       - name: Build new image
-        command: sudo docker build -t 1365890/devops_project /tmp/Devops-project/Dockerfile
+        command: sudo docker build -t 1365890/devops_project -f  /tmp/Devops-project/Dockerfile .
         ignore_errors: yes
 
       - name: create a container with the devops-project  image
-        command: sudo docker run -d --name devops_project -p 9090:8085 1365890/devops_project
+        command: sudo docker run -d --name devops_project -p 9090:8085 1365890/devops_project:latest
 
 
       
