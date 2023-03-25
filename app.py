@@ -33,7 +33,7 @@ def QR():
     c=0 #for like count
 
 
-    set_env(title="QR-Code Generator") #For setting the window title bar text(tab text)
+    set_env(title="QR-Code Generator Modified") #For setting the window title bar text(tab text)
 
     # put_html(r"""<h1  align="center"><strong>Color-QR: QRCode Generator</strong></h1>""") #App Name in Main screen
     # img = open('logo.png', 'rb').read()  #logo
