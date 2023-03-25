@@ -6,12 +6,12 @@ pipeline {
                 checkout scm
             }
         }
-        stage('Test and deploy') {
+        stage('Test and Moving source code to Docker Swarm') {
             steps {
                 sh 'ansible-playbook playbook-to-copy-data-to-docker.yml --user=jenkins'
             }
         }
-        stage('Deploy') {
+        stage('Deploying the Containers') {
             steps {
                 sh 'echo "Deploying..."'
             }

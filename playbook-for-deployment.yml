@@ -1,5 +1,5 @@
 ---
-- hosts: localhost
+- hosts: all
   become: false
 
   tasks:
@@ -11,8 +11,12 @@
         command: docker rm  1365890/devops_project
         ignore_errors: yes
 
+      - name: Build new image
+        command: docker build -t 1365890/devops_project /tmp/Devops-project/Dockerfile
+        ignore_errors: yes
+
       - name: create a container with the devops-project  image
-        command: docker run -d --name 1365890/devops_project -p 8080:8080 1365890/devops_project
+        command: docker run -d --name 1365890/devops_project -p 9090:8080 1365890/devops_project
 
 
       - name: Remove Old Docker image
