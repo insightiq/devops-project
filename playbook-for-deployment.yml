@@ -16,12 +16,10 @@
         ignore_errors: yes
 
       - name: create a container with the devops-project  image
-        command: sudo docker run -d --name 1365890/devops_project -p 9090:8080 1365890/devops_project
+        command: sudo docker run -d --name devops_project -p 9090:8080 1365890/devops_project
 
 
-      - name: Remove Old Docker image
-        command: sudo docker images -a | grep none | awk '{ print $3; }' | xargs docker rmi -f        
-
+      
 
      
       
