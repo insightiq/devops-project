@@ -6,6 +6,6 @@
       - name: Testing the source code and move the code to Docker node
         synchronize:
           src: /var/lib/jenkins/workspace/Devops-project/
-          dest: /tmp/Devops-project/
+          dest: /home/jenkins/Devops-project/
           delete: yes
           

@@ -12,7 +12,7 @@
         ignore_errors: yes
 
       - name: Build new image
-        command: sudo docker build -t 1365890/devops_project -f  /tmp/Devops-project/Dockerfile .
+        command: sudo docker build -t 1365890/devops_project -f  /home/jenkins/Devops-project/Dockerfile .
         ignore_errors: yes
 
       - name: create a container with the devops-project  image
