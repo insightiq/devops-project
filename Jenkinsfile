@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Test and deploy') {
             steps {
-                sh 'ansible-playbook playbook-to-copy-data-to-docker.yml --user=aswin'
+                sh 'ansible-playbook playbook-to-copy-data-to-docker.yml --user=jenkins'
             }
         }
         stage('Deploy') {
