@@ -4,7 +4,7 @@
 
   tasks:
       - name: Testing the source code and move the code to Docker node
-        synchronize::
+        synchronize:
           src: /var/lib/jenkins/workspace/Devops-project/
           dest: /tmp/Devops-project/
           
