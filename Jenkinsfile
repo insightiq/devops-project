@@ -11,7 +11,7 @@ pipeline{
 
     stage('Build Image'){
         steps{
-            sh 'sudo docker build -t streamlit .'
+            sh 'sudo docker build -t 1365890/devops_project .'
 
         }
     }

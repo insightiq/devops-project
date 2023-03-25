@@ -3,8 +3,6 @@ Python Webapp for Creating QR codes
 Uses: Python,pywebio,Falsk,qrcode module
 App Deployed on : Heroku  
 
-Link : https://color-qr.herokuapp.com/
-
 
 About the webapp
 
