@@ -4,23 +4,23 @@
 
   tasks:
       - name: Stop running container
-        command: docker stop 1365890/devops_project
+        command: sudo docker stop 1365890/devops_project
         ignore_errors: yes
 
       - name: Remove running container
-        command: docker rm  1365890/devops_project
+        command: sudo docker rm  1365890/devops_project
         ignore_errors: yes
 
       - name: Build new image
-        command: docker build -t 1365890/devops_project /tmp/Devops-project/Dockerfile
+        command: sudo docker build -t 1365890/devops_project /tmp/Devops-project/Dockerfile
         ignore_errors: yes
 
       - name: create a container with the devops-project  image
-        command: docker run -d --name 1365890/devops_project -p 9090:8080 1365890/devops_project
+        command: sudo docker run -d --name 1365890/devops_project -p 9090:8080 1365890/devops_project
 
 
       - name: Remove Old Docker image
-        command: docker images -a | grep none | awk '{ print $3; }' | xargs docker rmi -f        
+        command: sudo docker images -a | grep none | awk '{ print $3; }' | xargs docker rmi -f        
 
 
      
