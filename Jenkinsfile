@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Deploying the Containers') {
             steps {
-                sh 'ansible-playbook playbook-for-deployment.yml --user=jenkin'
+                sh 'ansible-playbook playbook-for-deployment.yml --user=jenkins'
             }
         }
     }
