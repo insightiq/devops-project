@@ -12,37 +12,28 @@ pipeline{
   
     }
 
-     stage('Testing and moving source code to Docker swarm'){
+    stage('Build Image'){
         steps{
             sh 'ansible-playbook playbook-to-copy-data-to-docker.yml --user=aswin'
 
         }
     }
+    stage('Run Image'){
+        steps{
 
-
-
-    // stage('Build Image'){
-    //     steps{
-    //         sh 'sudo docker build -t 1365890/devops_project .'
-
-    //     }
-    // }
-    // stage('Run Image'){
-    //     steps{
-
-    //         sh 'ansible-playbook  ./playbook-for-deployment.yml'
+            sh 'ansible-playbook  ./playbook-for-deployment.yml'
 
            
 
-    //     }
-    // }
-    // stage('Testing'){
-    //     steps{
-    //         echo 'Process completed and deployed'
-    //     }
+        }
+    }
+    stage('Testing'){
+        steps{
+            echo 'Process completed and deployed'
+        }
     
-    // }
-    // }
+    }
+    }
 
     
     
