@@ -11,12 +11,14 @@
         command: sudo docker rm  devops_project
         ignore_errors: yes
 
-      - name: Current location
-        command: sudo pwd
-        ignore_errors: yes
 
-      # - name: Build new image
-      #   command: sudo docker build -t 1365890/devops_projects -f /home/jenkins/Devops-project/Dockerfile .
+
+      - name: Build new image
+        command: sh /home/jenkins/Devops-project/run_container.sh
+       
+
+
+        #command: sudo docker build -t 1365890/devops_projects -f /home/jenkins/Devops-project/Dockerfile .
       #   ignore_errors: yes
 
       # - name: create a container with the devops-project  image
