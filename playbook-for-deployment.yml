@@ -21,7 +21,7 @@
         #command : sudo docker compose up
 
       - name: Remove all older images
-        command: sh docker image prune -f
+        command: sh sudo docker image prune -f
        
 
 
