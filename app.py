@@ -33,7 +33,7 @@ def QR():
 
     set_env(title="QR-Code Generator") #For setting the window title bar text(tab text)
 
-    put_html(r"""<h1  align="center"><strong>Color-QR: QRCode Generator InsightIQ</strong></h1>""") #App Name in Main screen
+    put_html(r"""<h1  align="center"><strong>Color-QR: QRCode Generator InsightIQ V1</strong></h1>""") #App Name in Main screen
     img = open('logo.png', 'rb').read()  #logo
     put_image(img, width='100px')#size of image
 

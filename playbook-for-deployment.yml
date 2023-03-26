@@ -15,15 +15,13 @@
 
       - name: Build new image
         command: sh /home/jenkins/Devops-project/run_container.sh
+      
+      - name: Run the new Container
+        command: sudo docker run -d --name devops_project -p 8080:8080 1365890/devops_projects 
        
 
 
-        #command: sudo docker build -t 1365890/devops_projects -f /home/jenkins/Devops-project/Dockerfile .
-      #   ignore_errors: yes
-
-      # - name: create a container with the devops-project  image
-      #   command: sudo docker run -d --name devops_project -p 8080:8080 1365890/devops_projects
-
+     
 
       
 
