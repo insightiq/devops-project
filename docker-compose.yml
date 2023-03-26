@@ -1,17 +1,12 @@
 version: '3.1'
 
-services:
-         
+services:         
 
-    nginx:
-        image: streamlit
+    Devops-project:
+        image: 1365890/devops_projects
         ports:
-            - 8051:8051
+            - 8080:8080
         deploy:
             replicas: 2
-networks: 
-  default: 
-    external: 
-      name: webapp-network 
 
 
