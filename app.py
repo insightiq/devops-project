@@ -33,7 +33,7 @@ def QR():
 
     set_env(title="QR-Code Generator") #For setting the window title bar text(tab text)
 
-    put_html(r"""<h1  align="center"><strong>Color-QR: QRCode Generator InsightIQ V2</strong></h1>""") #App Name in Main screen
+    put_html(r"""<h1  align="center"><strong>Color-QR: QRCode Generator</strong></h1>""") #App Name in Main screen
     img = open('logo.png', 'rb').read()  #logo
     put_image(img, width='100px')#size of image
 
@@ -88,7 +88,7 @@ def QR():
     #To show About sessiono
     def clicked():
         popup('About Us', [
-            put_html('<h2>Created by Aswin Ks</h2>'),
+            put_html('<h2>Created by  Team InsightIQ</h2>'),
             put_html('<h3>This Project is created using Python, Pywebio and Flask</h3>'),
             'Find More @ https://github.com/aswinks1995',  # equal to put_text('plain html: <br/>')
             put_buttons(['close'], onclick=lambda _: close_popup())

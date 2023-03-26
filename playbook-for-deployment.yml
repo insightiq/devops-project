@@ -19,6 +19,9 @@
       - name: Run the new Container
         command: sudo docker run -d --name devops_project -p 8080:8080 1365890/devops_projects 
         #command : sudo docker compose up
+
+      - name: Remove all older images
+        command: sh docker image prune -f
        
 
 
